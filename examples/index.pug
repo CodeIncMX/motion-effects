@@ -1,0 +1,11 @@
+extends ~@codeinc.mx/page-template-component/pug/template.pug
+
+block pageConfig
+  - config.title = 'Motion Effects :D';
+
+block body
+  .my-section
+    include ./svg-eiffel-component.pug
+    include ./svg-liberty-component.pug
+  .next-section
+    p Nice example ;D

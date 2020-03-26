@@ -1,0 +1,48 @@
+
+/* Factor is a number between 0 to 1 */
+@mixin parallax-position-element($factor) {
+  transform:translateZ(#{'-' + $factor + 'px'}) scale(1);
+}
+
+/* Set parallax effect in  a section
+* Use content to set background[-image] styles
+*/
+@mixin bg-parallax($section__className, $parent_className: 'body') {
+
+  html {
+    overflow: hidden;
+  }
+
+  @if not $parent_className == 'body' {
+    $parent_className: "." + $parent_className;
+  }
+
+  #{$parent_className} {
+    height: 100vh;
+    perspective: 1px;
+    transform-style: preserve-3d;
+    overflow-x:hidden;
+    overflow-y:auto;
+  }
+
+  .#{$section__className} {
+
+    width: 100vw;
+    height: 100vh;
+    box-sizing: border-box;
+    transform-style: preserve-3d;
+
+    &::before {
+      content:"";
+      width: 100vw;
+      height: 100vh;
+      top:0;
+      left:0;
+      z-index: -1;
+      position: absolute;
+      transform:translateZ(-1px) scale(2);
+
+      @content;
+    }
+  }
+}
