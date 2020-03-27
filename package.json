@@ -1,6 +1,6 @@
 {
   "name": "@codeinc.mx/motion-effects",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A great motion effects in sass web development by Code Inc MX",
   "main": "scss/motions.scss",
   "directories": {

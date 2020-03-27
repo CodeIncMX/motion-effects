@@ -1,6 +1,12 @@
 @import '~@codeinc.mx/page-template-component/scss/pageTemplate.scss';
 @import '../scss/motion.scss';
 
+
+.my-section {
+  width: 100vw;
+  height: 530px;
+}
+
 @include bg-parallax('my-section'){
   @include set-background-image-all-versions('./images/sky') {
     background-size: cover;
